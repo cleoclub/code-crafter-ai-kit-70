@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCrafter AI - Gerador de Código</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>⚡ CodeCrafter AI</h1>
+                <p>Transforme suas ideias em código funcional</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="input-section">
+                <div class="prompt-container">
+                    <label for="prompt">Descreva sua aplicação:</label>
+                    <textarea 
+                        id="prompt" 
+                        placeholder="Ex: Crie uma calculadora simples com botões coloridos e operações básicas de matemática..."
+                        rows="4"
+                    ></textarea>
+                    <button id="gerar-btn" class="generate-btn">
+                        <span class="btn-text">🚀 Gerar Aplicação</span>
+                        <span class="btn-loading" style="display: none;">
+                            <div class="spinner"></div>
+                            Gerando código...
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-section" id="results-section" style="display: none;">
+                <div class="code-tabs">
+                    <div class="tabs-header">
+                        <h3>Código Gerado</h3>
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="html">HTML</button>
+                            <button class="tab-btn" data-tab="css">CSS</button>
+                            <button class="tab-btn" data-tab="js">JavaScript</button>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="html-tab">
+                            <pre><code id="html-code"></code></pre>
+                        </div>
+                        <div class="tab-pane" id="css-tab">
+                            <pre><code id="css-code"></code></pre>
+                        </div>
+                        <div class="tab-pane" id="js-tab">
+                            <pre><code id="js-code"></code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preview-section">
+                    <div class="preview-header">
+                        <h3>Prévia da Aplicação</h3>
+                        <button id="refresh-preview" class="refresh-btn">🔄 Atualizar</button>
+                    </div>
+                    <div class="preview-container">
+                        <iframe id="preview-iframe" title="Prévia da aplicação"></iframe>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>💡 Powered by OpenAI • Desenvolvido com ❤️</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
